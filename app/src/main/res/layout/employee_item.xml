@@ -1,0 +1,52 @@
+
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/row_card"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+       <ImageView
+           android:layout_width="80dp"
+           android:layout_height="80dp"
+           android:layout_marginRight="5dp"
+           android:src="@drawable/employee"
+           android:id="@+id/emp_image"
+           android:layout_alignParentTop="true"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emp_name"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/primary_text"
+            android:layout_toRightOf="@+id/emp_image"
+            android:layout_alignParentTop="true" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emp_designation"
+            android:textSize="14dp"
+            android:maxLines="1"
+            android:gravity="center_vertical"
+            android:textColor="@color/secondary_text"
+            android:textStyle="italic"
+            android:ellipsize="end"
+            android:layout_toRightOf="@+id/emp_image"
+            android:layout_below="@+id/emp_name" />
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
