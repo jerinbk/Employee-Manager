@@ -83,27 +83,7 @@ public class DataSource {
 
     }
 
-  /*  public void archiveNote(String id,int isArchived)
-    {
-      if(isArchived == 1)
-      {
-          ContentValues values = new ContentValues();
-          values.put(DataHelper.ARCHIVE, 0);
-          int rows = database.update(DataHelper.TABLE_NOTE,
-                  values, "entryId = " + id, null);
-          Log.i("user", rows + "updated");
-      }
-      else {
-          ContentValues values = new ContentValues();
-          values.put(DataHelper.ARCHIVE,1);
 
-          int rows = database.update(DataHelper.TABLE_NOTE,
-                  values, "entryId = " + id, null);
-
-
-          Log.i("user", rows + "updated");
-      }
-    }*/
     public List<Employee> getAllEmployees()
     {
         List<Employee> employees = new ArrayList<Employee>();
@@ -121,25 +101,7 @@ public class DataSource {
         cursor.close();
         return employees;
     }
-   /* public List<Employee> archiveNotes()
-    {
-        List<Employee> employees = new ArrayList<Employee>();
 
-        Cursor cursor = database.query(DataHelper.TABLE_EMPLOYEE,
-                noteAllColumns, null, null, null, null, null);
-
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            Employee _Note = cursorToNote(cursor);
-            employees.add(0, _Note);
-            cursor.moveToNext();
-        }
-
-        cursor.close();
-        return employees;
-    }
-
-*/
 
 
     private Employee cursorToEmployee(Cursor cursor) {
@@ -148,7 +110,6 @@ public class DataSource {
         note.setName(cursor.getString(cursor.getColumnIndex(DataHelper.EMP_NAME)));
         note.setId(cursor.getString(cursor.getColumnIndex(DataHelper.EMP_ID)));
         note.setDesignation(cursor.getString(cursor.getColumnIndex(DataHelper.EMP_DESIGNATION)));
-       /* note.setArchive(cursor.getInt(cursor.getColumnIndex(DataHelper.ARCHIVE)));*/
         return note;
     }
 

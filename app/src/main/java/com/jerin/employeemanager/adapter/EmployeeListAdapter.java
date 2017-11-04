@@ -17,37 +17,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Jerin on 12-Aug-16.
+ * Created by Jerin on 04-Nov-17.
  */
 public class EmployeeListAdapter extends BaseAdapter {
 
-    private List<Employee> allNotes;
-
-    public Context context;
-    ArrayList<Employee> searchList;
+    private List<Employee> allEmployees;
     private Context mContext;
-
-
 
     public EmployeeListAdapter(Context context, List<Employee> sNote) {
 
 
         this.mContext = context;
-        this.allNotes = sNote;
-        searchList = new ArrayList<>();
-        searchList.addAll(allNotes);
+        this.allEmployees = sNote;
+
 
     }
 
 
     @Override
     public int getCount() {
-        return allNotes.size();
+        return allEmployees.size();
     }
 
     @Override
     public Employee getItem(int i) {
-        return allNotes.get(i);
+        return allEmployees.get(i);
     }
 
     @Override
@@ -57,30 +51,29 @@ public class EmployeeListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-        NotesViewHolder mNotesViewHolder;
+        EmployeeViewHolder mEmployeeViewHolder;
         LayoutInflater inflater = LayoutInflater.from(mContext);
         if (view == null) {
             view = inflater.inflate(R.layout.employee_item, viewGroup, false);
-            mNotesViewHolder = new NotesViewHolder(view);
-            view.setTag(mNotesViewHolder);
+            mEmployeeViewHolder = new EmployeeViewHolder(view);
+            view.setTag(mEmployeeViewHolder);
         } else {
-            mNotesViewHolder = (NotesViewHolder) view.getTag();
+            mEmployeeViewHolder = (EmployeeViewHolder) view.getTag();
         }
 
         Employee employee = getItem(position);
-       // mNotesViewHolder.description.setText(employee.getDescription());
-        mNotesViewHolder.name.setText(employee.getName());
-        mNotesViewHolder.designation.setText(employee.getDesignation());
+        mEmployeeViewHolder.name.setText(employee.getName());
+        mEmployeeViewHolder.designation.setText(employee.getDesignation());
 
         return view;
     }
 
 
-    private class NotesViewHolder {
+    private class EmployeeViewHolder {
         private TextView name, designation;
         CardView rowCard;
 
-        public NotesViewHolder(View item) {
+        public EmployeeViewHolder(View item) {
             name = (TextView) item.findViewById(R.id.emp_name);
             designation = (TextView) item.findViewById(R.id.emp_designation);
             rowCard = (CardView) item.findViewById(R.id.row_card);

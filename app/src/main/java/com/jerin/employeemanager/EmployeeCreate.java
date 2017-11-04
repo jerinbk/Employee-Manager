@@ -23,6 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * Created by Jerin on 03-Nov-17.
+ */
+
 public class EmployeeCreate extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText empDescription;
@@ -68,7 +72,7 @@ public class EmployeeCreate extends AppCompatActivity implements AdapterView.OnI
 
             case R.id.save:
 
-                saveNote();
+                saveEmployee();
                 return true;
 
             case android.R.id.home:
@@ -111,7 +115,7 @@ public class EmployeeCreate extends AppCompatActivity implements AdapterView.OnI
 
     }
 
-    private void saveNote() {
+    private void saveEmployee() {
         String name = empName.getText().toString();
         String description = empDescription.getText().toString();
         //String designation = empDesignation.getText().toString();

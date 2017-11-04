@@ -24,6 +24,9 @@ import com.jerin.employeemanager.database.DataSource;
 import java.text.DateFormat;
 import java.util.Date;
 
+/**
+ * Created by Jerin on 03-Nov-17.
+ */
 public class EmployeeView extends AppCompatActivity  {
     TextView empName;
     TextView empDesignation;
@@ -112,7 +115,7 @@ public class EmployeeView extends AppCompatActivity  {
 
 
 
-    private void saveEditNote() {
+    private void saveEditEmployee() {
 
         String name = empName.getText().toString();
         String designation = empDesignation.getText().toString();
